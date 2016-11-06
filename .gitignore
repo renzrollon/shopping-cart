@@ -1,0 +1,14 @@
+/.idea
+*.iml
+*.DS_STORE
+.classpath
+.project
+.settings/
+.springbeans
+target/
+files/
+logs/
+newrelic/
+src/assembly/
+
+/generated/
