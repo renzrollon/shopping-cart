@@ -29,14 +29,11 @@ public class UnliSmall3For2DealDecorator implements PriceDecorator {
     }
 
     private int countUnliSmallItems(List<Item> items) {
-        int unliSmallCount= 0;
         final Product unliSmallInstance = Product.getUnliSmallInstance();
-        for(Item item : items) {
-            if(item instanceof Product && unliSmallInstance.equals(item)) {
-                unliSmallCount++;
-            }
-        }
-        return unliSmallCount;
+        return (int) items.stream()
+                .filter(item -> item instanceof Product && unliSmallInstance.equals(item))
+                .count();
+
     }
 
     @Override
