@@ -8,6 +8,7 @@ import java.util.Set;
 /**
  * Created by renz on 11/6/16.
  */
+@FunctionalInterface
 public interface ShoppingCartDecorator {
 
     boolean isApplicable(List<Item> items, Set<String> promoCodes);

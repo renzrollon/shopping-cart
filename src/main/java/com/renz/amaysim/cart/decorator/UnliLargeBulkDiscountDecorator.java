@@ -31,14 +31,10 @@ public class UnliLargeBulkDiscountDecorator implements PriceDecorator {
     }
 
     private int countUnliLargeItems(List<Item> items) {
-        int unliLargeCount= 0;
         final Product unliLargeInstance = Product.getUnliLargeInstance();
-        for(Item item : items) {
-            if(item instanceof Product && unliLargeInstance.equals(item)) {
-                unliLargeCount++;
-            }
-        }
-        return unliLargeCount;
+        return (int) items.stream()
+                .filter(item -> item instanceof Product && unliLargeInstance.equals(item))
+                .count();
     }
 
     @Override
